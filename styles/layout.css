@@ -3,11 +3,7 @@ body {
     padding:0;
 }
 
-header {
-    background-color:blue;
-    color: #fff;
-    padding: 1.25rem 1.25rem;
-}
+
 
 header a {
     color:#fff;
