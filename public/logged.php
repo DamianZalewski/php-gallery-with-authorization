@@ -1,10 +1,5 @@
 <?php
-include "../includes/doLogin-inc.php";
-session_start();
-if (isset($_SESSION['userId'])) {
-    header("Location: logged.php");
-}
-
+    include '../includes/checkAuth-inc.php';
 ?>
 
 <html lang="en">
@@ -16,6 +11,12 @@ if (isset($_SESSION['userId'])) {
 <?php
     include_once "../includes/header-inc.php";
 ?>
+<div>
+    Your imaages:
+    <form action="uploadImage-inc.php" method="post">
+        <input type="submit" value="Send" />
+    </form>
+</div>
 
 
 </body>
