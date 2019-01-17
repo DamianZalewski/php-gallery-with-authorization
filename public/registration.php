@@ -1,4 +1,10 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['userId'])) {
+    header("Location: logged.php");
+}
 include "../includes/doRegistration-inc.php";
 ?>
 
@@ -20,15 +26,14 @@ include "../includes/doRegistration-inc.php";
     <br />
     <input class="mb-2" type="password" name="pwd" placeholder="password"/>
     <br />
-    <input class="mb-2" type="submit" value="register"/>
+    <input class="mb-2" type="submit" name="registrationAction" value="register"/>
 </form>
 </div>
 
 <?php
-    if(isset($_POST['login']) & isset($_POST['pwd'])) {
+    if(isset($_POST['login']) & isset($_POST['pwd']) & isset($_POST['registrationAction'])) {
         $doRegistration($_POST['login'], $_POST['pwd']);
     };
 ?>
-<
 </body>
 </html>

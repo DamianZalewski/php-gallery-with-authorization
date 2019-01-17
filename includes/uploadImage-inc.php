@@ -1,8 +1,5 @@
 <?php
 include "dbauth-inc.php";
-@session_start();
-
-
 $uploadFile = function($image) use ($servername, $username, $password, $dbname) {
     $imageData = $image['tmp_name'];
     $imgContent = addslashes(file_get_contents($imageData));

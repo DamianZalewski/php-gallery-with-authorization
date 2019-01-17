@@ -1,9 +1,10 @@
 <?php
 include "dbauth-inc.php";
-session_start();
 
 
 $doLogin = function($login, $pwd) use ($servername, $username, $password, $dbname) {
+    echo "dologin: $pwd";
+
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
