@@ -7,7 +7,7 @@ if (!isset($_SESSION['userId'])) {
     header("Location: index.php");
 }
     include '../includes/uploadImage-inc.php';
-//?>
+?>
 
 <html lang="en">
 <head>
@@ -19,16 +19,22 @@ if (!isset($_SESSION['userId'])) {
 <?php
     include_once "../includes/header-inc.php";
 ?>
-<div class="container bg-light pt-4 pb-4 text-center">
-    <form action="" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
-    <?php
-        include_once "../includes/showImages-inc.php";
-    ?>
+<?php
+    include_once "../includes/background-inc.php";
+?>
+<div class="container-fluid">
+    <div class="row" style="min-height:90vh;">
+        <?php
+            include_once "../includes/menu-inc.php";
+        ?>
+        <div class="col-10 bg-light p-4 text-center">
+            <?php
+            include_once "../includes/showImages-inc.php";
+            ?>
+        </div>
+    </div>
 </div>
+
 <?php
     if(isset($_POST['submit'])) {
         $uploadFile($_FILES['fileToUpload']);

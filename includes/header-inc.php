@@ -1,37 +1,35 @@
 <?php
-//include "doLogin-inc.php";
-//include "doLogout-inc.php";
 echo "
-<nav  class='navbar navbar-dark bg-dark'>
-    <h3 class='dib'><a href='index.php'>Home page</a></h3>
+<nav  class='container-fluid navbar navbar-dark bg-dark'>
+    <h3 class='col-8'><a href='index.php'>Home page</a></h3>
 ";
 
 if(isset($_SESSION['userId'])) {
-    echo '<div class=\'dib fr pt1\'>You are logged in!
+    echo '<div class="col-4 text-right mt-2">
+<div class="d-inline-block text-white pr-2 align-middle">Welcome, '.$_SESSION["userName"]." ".$_SESSION["userSurname"].'!</div>
+<div class="d-inline-block">
     <form action="" method="post">
-    <input type="submit" name="logoutAction" value="logout" />
+    <input class="btn btn-primary" type="submit" name="logoutAction" value="logout" />
     </form>
-    </div></nav>';
+</div>
+
+    </div>';
 } else
 {
     echo "
-         <div class='dib fr pt1'>
+         <div class='col-4 text-right mt-3'>
              <form method=\"post\" action=\"\">
-                <input type=\"text\" name=\"login\" placeholder=\"login\"/>
-                <input type=\"password\" name=\"pwd\" placeholder=\"password\"/>
-                <input name=\"loginAction\" type=\"submit\" />
-                <div class='tr'>
-                    <a href='registration.php'>(Registration)</a>
-                </div>
+                <input class='p-1 pb-2' id='loginInput' type=\"text\" name=\"login\" placeholder=\"login\"/>
+                <input class='p-1 pb-2' id='passwordInput' type=\"password\" name=\"pwd\" placeholder=\"password\"/>
+                <input class='btn btn-primary pb-2' name=\"loginAction\" type=\"submit\" value='Log in' />
+                
              </form>
     </div>
-    </nav>
     ";
 }
 
 
 if(isset($_POST['login']) & isset($_POST['pwd']) & isset($_POST['loginAction'])) {
-    echo $_POST['login'].' '.$_POST['pwd'];
     include "doLogin-inc.php";
     $doLogin($_POST['login'], $_POST['pwd']);
 };

@@ -10,13 +10,16 @@ include "../includes/doRegistration-inc.php";
 
 <html lang="en">
 <head>
-    <title>Gallery</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/layout.css">
+    <?php
+    include_once "../includes/headMeta-inc.php";
+    ?>
 </head>
 <body>
 <?php
     include_once "../includes/header-inc.php";
+?>
+<?php
+include_once "../includes/background-inc.php";
 ?>
 <div class="container bg-light pt-4 pb-4">
     <h2 class="text-center mb-4">Registration</h2>

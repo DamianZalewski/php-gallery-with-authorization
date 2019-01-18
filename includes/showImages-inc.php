@@ -12,9 +12,8 @@
     if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
             echo '
-            
-            <div class="card d-inline-block" style="width: 18rem;">
-  <img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>
+            <div class="card d-inline-block align-top mb-2"  style="width: 18rem; height:18rem;">
+  <img style="height:12rem;" class="card-img-top" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>
   <div class="card-body row">
   <div class="d-inline-block text-left col">
       <h4>'.$row['name'].'</h4>

@@ -14,9 +14,14 @@ if (isset($_SESSION['userId'])) {
     ?>
 </head>
 <body>
+
 <?php
     include_once "../includes/header-inc.php";
 ?>
+<?php
+include_once "../includes/background-inc.php";
+?>
+
 <div class="container-fluid">
     <div class="row  m-4">
         <div class="col-4 bg-dark p-4">
@@ -26,6 +31,9 @@ if (isset($_SESSION['userId'])) {
             <p class="text-light text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus tempor metus. Proin mi massa, lacinia id mollis vitae, scelerisque in odio. Aliquam eu tincidunt mi. Ut molestie mattis eros id lobortis. Vivamus nec vulputate sem. Nunc consequat ipsum orci, et hendrerit magna sagittis maximus.
             </p>
+            <div class='tr'>
+                <a href='registration.php'>(Registration)</a>
+            </div>
         </div>
         <div class="col-1"></div>
         <div class="col-7 bg-dark p-4">
